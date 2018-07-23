@@ -1,0 +1,11 @@
+C:\Users\steph\OneDrive\Documents\GitHub\LanguageLearningChatBot\LanguageLearningChatBotCore\bin\Debug\netcoreapp2.1\LanguageLearningChatBotCore.deps.json
+C:\Users\steph\OneDrive\Documents\GitHub\LanguageLearningChatBot\LanguageLearningChatBotCore\bin\Debug\netcoreapp2.1\LanguageLearningChatBotCore.runtimeconfig.json
+C:\Users\steph\OneDrive\Documents\GitHub\LanguageLearningChatBot\LanguageLearningChatBotCore\bin\Debug\netcoreapp2.1\LanguageLearningChatBotCore.runtimeconfig.dev.json
+C:\Users\steph\OneDrive\Documents\GitHub\LanguageLearningChatBot\LanguageLearningChatBotCore\bin\Debug\netcoreapp2.1\LanguageLearningChatBotCore.dll
+C:\Users\steph\OneDrive\Documents\GitHub\LanguageLearningChatBot\LanguageLearningChatBotCore\bin\Debug\netcoreapp2.1\LanguageLearningChatBotCore.pdb
+C:\Users\steph\OneDrive\Documents\GitHub\LanguageLearningChatBot\LanguageLearningChatBotCore\obj\Debug\netcoreapp2.1\LanguageLearningChatBotCore.csprojAssemblyReference.cache
+C:\Users\steph\OneDrive\Documents\GitHub\LanguageLearningChatBot\LanguageLearningChatBotCore\obj\Debug\netcoreapp2.1\LanguageLearningChatBotCore.csproj.CoreCompileInputs.cache
+C:\Users\steph\OneDrive\Documents\GitHub\LanguageLearningChatBot\LanguageLearningChatBotCore\obj\Debug\netcoreapp2.1\LanguageLearningChatBotCore.AssemblyInfoInputs.cache
+C:\Users\steph\OneDrive\Documents\GitHub\LanguageLearningChatBot\LanguageLearningChatBotCore\obj\Debug\netcoreapp2.1\LanguageLearningChatBotCore.AssemblyInfo.cs
+C:\Users\steph\OneDrive\Documents\GitHub\LanguageLearningChatBot\LanguageLearningChatBotCore\obj\Debug\netcoreapp2.1\LanguageLearningChatBotCore.dll
+C:\Users\steph\OneDrive\Documents\GitHub\LanguageLearningChatBot\LanguageLearningChatBotCore\obj\Debug\netcoreapp2.1\LanguageLearningChatBotCore.pdb
