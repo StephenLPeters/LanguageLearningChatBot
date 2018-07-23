@@ -5,15 +5,15 @@ namespace LanguageLearningChatBotCore
 {
     class ResponseAnalysis
     {
-        public TranslationData response{get;}
-        public TranslationData prompt{get;}
-        public List<Correction> corrections{get;}
+        public TranslationData Response{get;}
+        public TranslationData Prompt{get;}
+        public List<Correction> Corrections{get;}
 
         public ResponseAnalysis(TranslationData theirResponse, TranslationData myPrompt, List<Correction> myCorrections)
         {
-            response = theirResponse;
-            prompt = myPrompt;
-            corrections = myCorrections;
+            Response = theirResponse;
+            Prompt = myPrompt;
+            Corrections = myCorrections;
         }
     }
 }
