@@ -719,23 +719,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\steph\\.nuget\\packages\\": {},
+    "C:\\Users\\anodonn\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\steph\\OneDrive\\Documents\\GitHub\\LanguageLearningChatBot\\LanguageLearningChatBotCore\\LanguageLearningChatBotCore.csproj",
+      "projectUniqueName": "c:\\Users\\anodonn\\Documents\\GitHub\\LanguageLearningChatBot\\LanguageLearningChatBotCore\\LanguageLearningChatBotCore.csproj",
       "projectName": "LanguageLearningChatBotCore",
-      "projectPath": "C:\\Users\\steph\\OneDrive\\Documents\\GitHub\\LanguageLearningChatBot\\LanguageLearningChatBotCore\\LanguageLearningChatBotCore.csproj",
-      "packagesPath": "C:\\Users\\steph\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\steph\\OneDrive\\Documents\\GitHub\\LanguageLearningChatBot\\LanguageLearningChatBotCore\\obj\\",
+      "projectPath": "c:\\Users\\anodonn\\Documents\\GitHub\\LanguageLearningChatBot\\LanguageLearningChatBotCore\\LanguageLearningChatBotCore.csproj",
+      "packagesPath": "C:\\Users\\anodonn\\.nuget\\packages\\",
+      "outputPath": "c:\\Users\\anodonn\\Documents\\GitHub\\LanguageLearningChatBot\\LanguageLearningChatBotCore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\steph\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\anodonn\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -743,7 +743,11 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "http://wanuget/Official/nuget/": {},
+        "https://1essharedassets.pkgs.visualstudio.com/_packaging/CodeFlow/nuget/v3/index.json": {},
+        "https://api.nuget.org/v3/index.json": {},
+        "https://msblox.pkgs.visualstudio.com/_packaging/SharePointOnline-Fabric/nuget/v3/index.json": {},
+        "https://mseng.pkgs.visualstudio.com/_packaging/CodeFlow/nuget/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.1": {

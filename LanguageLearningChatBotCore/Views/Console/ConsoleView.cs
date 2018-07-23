@@ -8,44 +8,30 @@ namespace TranslatorTextQuickStart
 {
     class ConsoleView
     {
-        static string host = "https://api.cognitive.microsofttranslator.com";
-        static string path = "/translate?api-version=3.0";
-        // Translate to German and Italian.
-        static string params_ = "&to=de&to=it";
-
-        static string uri = host + path + params_;
-
-        // NOTE: Replace this example key with a valid subscription key.
-        static string key = "fae421f860b548ecb7c5c5b04f12826a";
-
-        static string text = "Hello world!";
-
-        async static void Translate()
-        {
-            System.Object[] body = new System.Object[] { new { Text = text } };
-            var requestBody = JsonConvert.SerializeObject(body);
-
-            using (var client = new HttpClient())
-            using (var request = new HttpRequestMessage())
-            {
-                request.Method = HttpMethod.Post;
-                request.RequestUri = new Uri(uri);
-                request.Content = new StringContent(requestBody, Encoding.UTF8, "application/json");
-                request.Headers.Add("Ocp-Apim-Subscription-Key", key);
-
-                var response = await client.SendAsync(request);
-                var responseBody = await response.Content.ReadAsStringAsync();
-                var result = JsonConvert.SerializeObject(JsonConvert.DeserializeObject(responseBody), Formatting.Indented);
-
-                Console.OutputEncoding = UnicodeEncoding.UTF8;
-                Console.WriteLine(result);
-            }
-        }
-
+        static string primLang = "en-us";
+        static string secondLang = "fr-fr";
+        static string scenario = "Restaurant";
         static void Main(string[] args)
         {
-            Translate();
+            instance(primLang, secondLang, scenario);
+            LanguageLearningChatBotCore.ResponseAnalysis analysis = respond("");
+
             Console.ReadLine();
         }
+        static void instance(string primLang, string secondLang, string scenario){
+
+        }
+        static void respond(string userResponse){
+
+            LanguageLearningChatBotCore.TranslationData prompt = new LanguageLearningChatBotCore.TranslationData();
+            prompt.m_originalLanguage = LanguageLearningChatBotCore.Language.French;
+            prompt.OriginalText = "Bonjour, ca va?";
+            prompt.
+
+
+
+
+        }
     }
+
 }
