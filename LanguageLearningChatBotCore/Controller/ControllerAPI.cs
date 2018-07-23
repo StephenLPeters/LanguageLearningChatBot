@@ -6,7 +6,7 @@ namespace LanguageLearningChatBotCore
     {
         TranslationData Translate(string data)
         {
-            return new TranslationData(data, data);
+            return new TranslationData();
         }
     }
 }
