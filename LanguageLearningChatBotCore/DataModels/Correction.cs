@@ -4,8 +4,8 @@ namespace LanguageLearningChatBotCore
 {
     class Correction
     {
-        public int offset{get; set;}
-        public string original{get; set;}
-        public string corrected{get; set;}
+        public int Offset{get; set;}
+        public string Original{get; set;}
+        public string Corrected{get; set;}
     }
 }
