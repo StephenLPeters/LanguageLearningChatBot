@@ -7,9 +7,9 @@ namespace LanguageLearningChatBotCore
     {
         public TranslationData response{get;}
         public TranslationData prompt{get;}
-        public List<object> corrections{get;}
+        public List<Correction> corrections{get;}
 
-        public ResponseAnalysis(TranslationData theirResponse, TranslationData myPrompt, List<Object> myCorrections)
+        public ResponseAnalysis(TranslationData theirResponse, TranslationData myPrompt, List<Correction> myCorrections)
         {
             response = theirResponse;
             prompt = myPrompt;
