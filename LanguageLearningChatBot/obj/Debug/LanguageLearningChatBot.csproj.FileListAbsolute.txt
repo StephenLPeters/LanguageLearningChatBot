@@ -1,1 +1,6 @@
 C:\Users\cocurc\Documents\Hackathon2018\LanguageLearningChatBotGit\LanguageLearningChatBot\bin\Debug\LanguageLearningChatBot.exe.config
+C:\Users\cocurc\Documents\Hackathon2018\LanguageLearningChatBotGit\LanguageLearningChatBot\bin\Debug\LanguageLearningChatBot.exe
+C:\Users\cocurc\Documents\Hackathon2018\LanguageLearningChatBotGit\LanguageLearningChatBot\bin\Debug\LanguageLearningChatBot.pdb
+C:\Users\cocurc\Documents\Hackathon2018\LanguageLearningChatBotGit\LanguageLearningChatBot\obj\Debug\LanguageLearningChatBot.csprojResolveAssemblyReference.cache
+C:\Users\cocurc\Documents\Hackathon2018\LanguageLearningChatBotGit\LanguageLearningChatBot\obj\Debug\LanguageLearningChatBot.exe
+C:\Users\cocurc\Documents\Hackathon2018\LanguageLearningChatBotGit\LanguageLearningChatBot\obj\Debug\LanguageLearningChatBot.pdb
