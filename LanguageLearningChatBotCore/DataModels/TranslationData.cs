@@ -5,9 +5,9 @@ namespace LanguageLearningChatBotCore
     class TranslationData
     {
         public string OriginalText{get; set;}
-        public Language m_originalLanguage{get; set;}
+        public Language OriginalLanguage{get; set;}
 
-        public string m_translated{get; set;} 
-        public Language m_translatedLanguage{get; set;}
+        public string Translated{get; set;} 
+        public Language TranslatedLanguage{get; set;}
     }
 }
