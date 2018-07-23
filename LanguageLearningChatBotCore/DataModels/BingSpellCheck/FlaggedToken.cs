@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using System.Collections.Generic;
 using Newtonsoft.Json;
 
 namespace LanguageLearningChatBotCore.DataModels.BingSpellCheck
 {
     [JsonObject]
-    class FlaggedToken
+    public class FlaggedToken
     {
         [JsonProperty("offset")]
         public int Offset { get; set; }

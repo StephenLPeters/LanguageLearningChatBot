@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using Newtonsoft.Json;
-using System.Text;
 
 namespace LanguageLearningChatBotCore.DataModels.BingSpellCheck
 {
     [JsonObject]
-    class SpellCheckResponse
+    public class SpellCheckResponse
     {
         [JsonProperty("_type")]
         public string Type { get; set; }

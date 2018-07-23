@@ -1,12 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 
 namespace LanguageLearningChatBotCore.DataModels.BingSpellCheck
 {
     [JsonObject]
-    class Suggestion
+    public class Suggestion
     {
         [JsonProperty("suggestion")]
         public string SuggestedText { get; set; }
