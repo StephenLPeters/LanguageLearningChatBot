@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Net.Http;
 using System.Text;
 // NOTE: Install the Newtonsoft.Json NuGet package.
@@ -6,7 +6,7 @@ using Newtonsoft.Json;
 
 namespace TranslatorTextQuickStart
 {
-    class Program
+    class ConsoleView
     {
         static string host = "https://api.cognitive.microsofttranslator.com";
         static string path = "/translate?api-version=3.0";

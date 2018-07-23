@@ -719,28 +719,30 @@
     ]
   },
   "packageFolders": {
-    "/Users/troymanchester/.nuget/packages/": {},
-    "/usr/local/share/dotnet/sdk/NuGetFallbackFolder": {}
+    "C:\\Users\\steph\\.nuget\\packages\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/troymanchester/Downloads/language_bot/LanguageLearningChatBot/LanguageLearningChatBotCore/LanguageLearningChatBotCore.csproj",
+      "projectUniqueName": "C:\\Users\\steph\\OneDrive\\Documents\\GitHub\\LanguageLearningChatBot\\LanguageLearningChatBotCore\\LanguageLearningChatBotCore.csproj",
       "projectName": "LanguageLearningChatBotCore",
-      "projectPath": "/Users/troymanchester/Downloads/language_bot/LanguageLearningChatBot/LanguageLearningChatBotCore/LanguageLearningChatBotCore.csproj",
-      "packagesPath": "/Users/troymanchester/.nuget/packages/",
-      "outputPath": "/Users/troymanchester/Downloads/language_bot/LanguageLearningChatBot/LanguageLearningChatBotCore/obj/",
+      "projectPath": "C:\\Users\\steph\\OneDrive\\Documents\\GitHub\\LanguageLearningChatBot\\LanguageLearningChatBotCore\\LanguageLearningChatBotCore.csproj",
+      "packagesPath": "C:\\Users\\steph\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\steph\\OneDrive\\Documents\\GitHub\\LanguageLearningChatBot\\LanguageLearningChatBotCore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/troymanchester/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\steph\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.1"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
