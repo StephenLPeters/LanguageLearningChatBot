@@ -31,11 +31,6 @@ namespace LanguageLearningChatBotCore
             m_secondary = secondary;
         }
 
-        public TranslationData Translate(string data)
-        {
-            return m_controllerAPIImpl.Translate(m_primary, m_secondary, data);
-        }
-
         public ResponseAnalysis Respond(string data)
         {
             return m_controllerAPIImpl.Respond(m_primary, m_secondary, data);
