@@ -9,16 +9,49 @@ namespace TranslatorTextQuickStart
 {
     class ConsoleView
     {
-        static void Main()
+        static void Main(string[] args)
         {
             LanguageLearningChatBotCore.ResponseAnalysis analysis = respond("");
             Console.WriteLine(analysis.Prompt.SecondaryText);
-            // Uncomment the line below to test Translate functionality
-            // TODO: break this out a separate unit test file
-            // LanguageLearningChatBotCore.ControllerAPIImpl.Translate("Hello World", LanguageLearningChatBotCore.Language.Spanish);
+
+            if (args.Length > 0)
+            {
+                if (args[0] == "-ut")
+                {
+                    RunUnitTests();
+                }
+            }
             string response = Console.ReadLine();
             Console.WriteLine(response);
 
+        }
+
+        static void RunUnitTests()
+        {
+            RunTranslateUnitTests();
+        }
+
+        static void RunTranslateUnitTests()
+        {
+            //Task<TranslationData> task1 = Task<TranslationData>.Factory.StartNew();
+            LanguageLearningChatBotCore.TranslationData result = LanguageLearningChatBotCore.ControllerAPIImpl.Translate("Hello World", LanguageLearningChatBotCore.Language.Spanish).Result;
+            Console.WriteLine("Running Translate Unit Test - hit Enter to continue");
+            Console.ReadLine();
+            if (result.PrimaryLanguage != LanguageLearningChatBotCore.Language.English
+            || result.SecondaryLanguage != LanguageLearningChatBotCore.Language.Spanish
+            || result.PrimaryText != "Hello World"
+            || result.SecondaryText != "Hola mundo" )
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Translate failed unit test");
+                Console.ResetColor();
+            }
+            else
+            {
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Translate passed unit test");
+                Console.ResetColor();
+            }
         }
 
         static LanguageLearningChatBotCore.ResponseAnalysis respond(string userResponse){
