@@ -20,3 +20,9 @@ C:\Users\steph\OneDrive\Documents\GitHub\LanguageLearningChatBot\LanguageLearnin
 C:\Users\steph\OneDrive\Documents\GitHub\LanguageLearningChatBot\LanguageLearningChatBotCore\obj\Debug\netcoreapp2.1\LanguageLearningChatBotCore.AssemblyInfo.cs
 C:\Users\steph\OneDrive\Documents\GitHub\LanguageLearningChatBot\LanguageLearningChatBotCore\obj\Debug\netcoreapp2.1\LanguageLearningChatBotCore.dll
 C:\Users\steph\OneDrive\Documents\GitHub\LanguageLearningChatBot\LanguageLearningChatBotCore\obj\Debug\netcoreapp2.1\LanguageLearningChatBotCore.pdb
+C:\Users\anodonn\Documents\GitHub\LanguageLearningChatBot\LanguageLearningChatBotCore\obj\Debug\netcoreapp2.1\LanguageLearningChatBotCore.csprojAssemblyReference.cache
+C:\Users\anodonn\Documents\GitHub\LanguageLearningChatBot\LanguageLearningChatBotCore\obj\Debug\netcoreapp2.1\LanguageLearningChatBotCore.csproj.CoreCompileInputs.cache
+C:\Users\anodonn\Documents\GitHub\LanguageLearningChatBot\LanguageLearningChatBotCore\obj\Debug\netcoreapp2.1\LanguageLearningChatBotCore.AssemblyInfoInputs.cache
+C:\Users\anodonn\Documents\GitHub\LanguageLearningChatBot\LanguageLearningChatBotCore\obj\Debug\netcoreapp2.1\LanguageLearningChatBotCore.AssemblyInfo.cs
+C:\Users\anodonn\Documents\GitHub\LanguageLearningChatBot\LanguageLearningChatBotCore\obj\Debug\netcoreapp2.1\LanguageLearningChatBotCore.dll
+C:\Users\anodonn\Documents\GitHub\LanguageLearningChatBot\LanguageLearningChatBotCore\obj\Debug\netcoreapp2.1\LanguageLearningChatBotCore.pdb
