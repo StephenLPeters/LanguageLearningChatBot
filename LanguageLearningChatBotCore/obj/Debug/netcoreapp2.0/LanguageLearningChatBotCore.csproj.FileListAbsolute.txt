@@ -1,0 +1,11 @@
+C:\Users\cocurc\Documents\Hackathon2018\LanguageLearningChatBot\LanguageLearningChatBotCore\bin\Debug\netcoreapp2.0\LanguageLearningChatBotCore.deps.json
+C:\Users\cocurc\Documents\Hackathon2018\LanguageLearningChatBot\LanguageLearningChatBotCore\bin\Debug\netcoreapp2.0\LanguageLearningChatBotCore.runtimeconfig.json
+C:\Users\cocurc\Documents\Hackathon2018\LanguageLearningChatBot\LanguageLearningChatBotCore\bin\Debug\netcoreapp2.0\LanguageLearningChatBotCore.runtimeconfig.dev.json
+C:\Users\cocurc\Documents\Hackathon2018\LanguageLearningChatBot\LanguageLearningChatBotCore\bin\Debug\netcoreapp2.0\LanguageLearningChatBotCore.dll
+C:\Users\cocurc\Documents\Hackathon2018\LanguageLearningChatBot\LanguageLearningChatBotCore\bin\Debug\netcoreapp2.0\LanguageLearningChatBotCore.pdb
+C:\Users\cocurc\Documents\Hackathon2018\LanguageLearningChatBot\LanguageLearningChatBotCore\obj\Debug\netcoreapp2.0\LanguageLearningChatBotCore.csprojAssemblyReference.cache
+C:\Users\cocurc\Documents\Hackathon2018\LanguageLearningChatBot\LanguageLearningChatBotCore\obj\Debug\netcoreapp2.0\LanguageLearningChatBotCore.csproj.CoreCompileInputs.cache
+C:\Users\cocurc\Documents\Hackathon2018\LanguageLearningChatBot\LanguageLearningChatBotCore\obj\Debug\netcoreapp2.0\LanguageLearningChatBotCore.AssemblyInfoInputs.cache
+C:\Users\cocurc\Documents\Hackathon2018\LanguageLearningChatBot\LanguageLearningChatBotCore\obj\Debug\netcoreapp2.0\LanguageLearningChatBotCore.AssemblyInfo.cs
+C:\Users\cocurc\Documents\Hackathon2018\LanguageLearningChatBot\LanguageLearningChatBotCore\obj\Debug\netcoreapp2.0\LanguageLearningChatBotCore.dll
+C:\Users\cocurc\Documents\Hackathon2018\LanguageLearningChatBot\LanguageLearningChatBotCore\obj\Debug\netcoreapp2.0\LanguageLearningChatBotCore.pdb
