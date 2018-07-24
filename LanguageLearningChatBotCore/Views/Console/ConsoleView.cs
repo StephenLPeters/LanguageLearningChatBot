@@ -16,7 +16,7 @@ namespace TranslatorTextQuickStart
         {
             instance(primLang, secondLang, scenario);
             LanguageLearningChatBotCore.ResponseAnalysis analysis = respond("");
-            Console.WriteLine(analysis.Prompt.m_secondaryText);
+            Console.WriteLine(analysis.Prompt.SecondaryText);
             string response = Console.ReadLine();
             Console.WriteLine(response);
         }
@@ -26,16 +26,16 @@ namespace TranslatorTextQuickStart
         static LanguageLearningChatBotCore.ResponseAnalysis respond(string userResponse){
 
             LanguageLearningChatBotCore.TranslationData prompt = new LanguageLearningChatBotCore.TranslationData();
-            prompt.m_secondaryLanguage = LanguageLearningChatBotCore.Language.French;
-            prompt.m_secondaryText = "Bonjour, ca va?";
-            prompt.m_primaryLanguage = LanguageLearningChatBotCore.Language.English;
-            prompt.m_primaryText = "Hello, how are you?";
+            prompt.SecondaryLanguage = LanguageLearningChatBotCore.Language.French;
+            prompt.SecondaryText = "Bonjour, ca va?";
+            prompt.PrimaryLanguage = LanguageLearningChatBotCore.Language.English;
+            prompt.PrimaryText = "Hello, how are you?";
 
             LanguageLearningChatBotCore.TranslationData response = new LanguageLearningChatBotCore.TranslationData();
-            response.m_secondaryLanguage = LanguageLearningChatBotCore.Language.French;
-            response.m_secondaryText = "Tres brien, merci";
-            response.m_primaryLanguage = LanguageLearningChatBotCore.Language.English;
-            response.m_primaryText = "Very well, thank you";
+            response.SecondaryLanguage = LanguageLearningChatBotCore.Language.French;
+            response.SecondaryText = "Tres brien, merci";
+            response.PrimaryLanguage = LanguageLearningChatBotCore.Language.English;
+            response.PrimaryText = "Very well, thank you";
 
             LanguageLearningChatBotCore.Correction correction = new LanguageLearningChatBotCore.Correction();
             correction.Original = "hi";
