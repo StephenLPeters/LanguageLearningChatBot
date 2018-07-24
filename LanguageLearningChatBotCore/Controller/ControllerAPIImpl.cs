@@ -29,15 +29,17 @@ namespace LanguageLearningChatBotCore
     }
     public class ControllerAPIImpl
     {
-        static string host = "https://api.cognitive.microsofttranslator.com";
-        static string path = "/translate?api-version=3.0";
+        private const string host = "https://api.cognitive.microsofttranslator.com";
+        private const string path = "/translate?api-version=3.0";
         // MVP - Translate to French. This will have to change to use an enum for language lookup
-        static string params_ = "&to=fr";
+        private static string params_ = "&to=fr";
 
-        static string uri = host + path + params_;
+        private static string uri = host + path + params_;
 
         // NOTE: Replace this example key with a valid subscription key.
-        static string key = "fae421f860b548ecb7c5c5b04f12826a";
+        private static string key = "fae421f860b548ecb7c5c5b04f12826a";
+
+        private int responseCount = 0;
 
         public async static /*TranslationData*/void Translate(string data)
         {
@@ -66,7 +68,24 @@ namespace LanguageLearningChatBotCore
 
         public ResponseAnalysis Respond(Language primary, Language secondary, string response)
         {
-            return new ResponseAnalysis(new TranslationData(), new TranslationData(), new List<Correction>());
+            responseCount++;
+
+            var theirResponse = new TranslationData();
+            theirResponse.PrimaryLanguage = primary;
+            theirResponse.PrimaryText = response;
+            theirResponse.SecondaryLanguage = secondary;
+            theirResponse.PrimaryText = "Translated: " + response;
+            var myPrompt = new TranslationData();
+            myPrompt.PrimaryLanguage = primary;
+            myPrompt.PrimaryText = "Response to: " + response + " - Response #" + responseCount;
+            myPrompt.SecondaryLanguage = secondary;
+            myPrompt.SecondaryText = "Translated Response to: " + response + " - Response #" + responseCount;
+
+            var responseAnalysis = new ResponseAnalysis();
+            responseAnalysis.Response = theirResponse;
+            responseAnalysis.Prompt = myPrompt;
+            responseAnalysis.Corrections = new List<Correction>();
+            return responseAnalysis;
         }
     }
 }
