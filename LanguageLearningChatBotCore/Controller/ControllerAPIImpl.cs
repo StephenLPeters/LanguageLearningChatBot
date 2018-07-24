@@ -2,49 +2,32 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 using System.Collections;
 using System.Linq;
 // NOTE: Install the Newtonsoft.Json NuGet package.
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using LanguageLearningChatBotCore.DataModels;
 
 namespace LanguageLearningChatBotCore
 {
-    class Translation
-    {
-        public String Text { get; set; }
-        public String To { get; set; }
-    }
-
-    class DetectedLang
-    {
-        public String Language { get; set; }
-        public double Score { get; set; }
-    }
-
-    class TranslatorResponse
-    {
-        public DetectedLang DetectedLanguage { get; set; }
-        public IList<Translation> Translations { get; set; }
-    }
     public class ControllerAPIImpl
     {
-        private const string host = "https://api.cognitive.microsofttranslator.com";
-        private const string path = "/translate?api-version=3.0";
-        // MVP - Translate to French. This will have to change to use an enum for language lookup
-        private static string params_ = "&to=fr";
+        static string host = "https://api.cognitive.microsofttranslator.com";
+        static string path = "/translate?api-version=3.0";
+        static string params_ = "&to=";
 
-        private static string uri = host + path + params_;
-
-        // NOTE: Replace this example key with a valid subscription key.
-        private static string key = "fae421f860b548ecb7c5c5b04f12826a";
+        // Text Translator API key
+        static string key = "fae421f860b548ecb7c5c5b04f12826a";
 
         private int responseCount = 0;
-
-        public async static /*TranslationData*/void Translate(string data)
+        public async static Task<TranslationData> Translate(string data, Language toLang)
         {
             System.Object[] body = new System.Object[] { new { Text = data } };
             var requestBody = JsonConvert.SerializeObject(body);
+
+            string uri = host + path + params_ + LanguageLookup.Languages[(int)toLang];
 
             using (var client = new HttpClient())
             using (var request = new HttpRequestMessage())
@@ -60,9 +43,12 @@ namespace LanguageLearningChatBotCore
                 // remove [] surrounding json response
                 TranslatorResponse result = JsonConvert.DeserializeObject<TranslatorResponse>(responseBody.Substring(1, responseBody.Length-2));
 
-                Console.OutputEncoding = UnicodeEncoding.UTF8;
-                Console.WriteLine(result.Translations[0].Text);
-                //return new TranslationData(data, );
+                TranslationData translationData = new TranslationData();
+                translationData.SecondaryLanguage = LanguageLookup.FindLanguage(result.Translations[0].To);
+                translationData.SecondaryText = result.Translations[0].Text;
+                translationData.PrimaryLanguage = LanguageLookup.FindLanguage(result.DetectedLanguage.Language);
+                translationData.PrimaryText = data;
+                return translationData;
             }
         }
 
