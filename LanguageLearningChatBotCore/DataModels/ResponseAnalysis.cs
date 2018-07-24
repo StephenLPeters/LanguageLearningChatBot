@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace LanguageLearningChatBotCore
 {
-    class ResponseAnalysis
+    public class ResponseAnalysis
     {
         public TranslationData Response{get;}
         public TranslationData Prompt{get;}

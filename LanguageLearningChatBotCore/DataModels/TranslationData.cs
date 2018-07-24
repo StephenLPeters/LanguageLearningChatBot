@@ -2,7 +2,7 @@ using System;
 
 namespace LanguageLearningChatBotCore
 {
-    class TranslationData
+    public class TranslationData
     {
         public string OriginalText{get; set;}
         public Language OriginalLanguage{get; set;}
