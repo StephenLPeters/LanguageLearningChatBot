@@ -13,9 +13,11 @@ namespace TranslatorTextQuickStart
         {
             LanguageLearningChatBotCore.ResponseAnalysis analysis = respond("");
             Console.WriteLine(analysis.Prompt.SecondaryText);
-            LanguageLearningChatBotCore.ControllerAPIImpl.Translate("Hello World", LanguageLearningChatBotCore.Language.Spanish);
+            // Uncomment the line below to test Translate functionality
+            // TODO: break this out a separate unit test file
+            // LanguageLearningChatBotCore.ControllerAPIImpl.Translate("Hello World", LanguageLearningChatBotCore.Language.Spanish);
             string response = Console.ReadLine();
-            //Console.WriteLine(response);
+            Console.WriteLine(response);
 
         }
 
