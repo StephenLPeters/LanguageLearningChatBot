@@ -6,6 +6,10 @@ namespace LanguageLearningChatBotCore
 {
     public class Correction
     {
+        public Correction()
+        {
+        }
+
         public Correction(FlaggedToken flaggedToken)
         {
             Suggestion bestSuggestion = flaggedToken.Suggestions.OrderByDescending(s => s.Score).FirstOrDefault();
