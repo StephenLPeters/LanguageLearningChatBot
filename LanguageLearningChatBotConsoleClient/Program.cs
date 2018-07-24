@@ -39,7 +39,10 @@ namespace LanguageLearningChatBotConsoleClient
 
             private async static Task<int> getControllerID(LanguageLearningChatBotCore.Language primary, LanguageLearningChatBotCore.Language secondary)
             {
-                using (var client = new HttpClient())
+                HttpClientHandler handler = new HttpClientHandler();
+                handler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
+
+                using (var client = new HttpClient(handler))
                 {
                     var values = new Dictionary<string, string>
                     {
@@ -61,7 +64,10 @@ namespace LanguageLearningChatBotConsoleClient
 
             private async static Task<LanguageLearningChatBotCore.ResponseAnalysis> Respond(string userResponse)
             {
-                using (var client = new HttpClient())
+                HttpClientHandler handler = new HttpClientHandler();
+                handler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
+
+                using (var client = new HttpClient(handler))
                 {
 
                     var values = new Dictionary<string, string>
