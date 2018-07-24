@@ -21,7 +21,7 @@ namespace LanguageLearningChatBotCore
         // Text Translator API key
         static string key = "fae421f860b548ecb7c5c5b04f12826a";
 
-        public async static /*Task<TranslationData>*/void Translate(string data, Language toLang)
+        public async static Task<TranslationData> Translate(string data, Language toLang)
         {
             System.Object[] body = new System.Object[] { new { Text = data } };
             var requestBody = JsonConvert.SerializeObject(body);
@@ -42,15 +42,12 @@ namespace LanguageLearningChatBotCore
                 // remove [] surrounding json response
                 TranslatorResponse result = JsonConvert.DeserializeObject<TranslatorResponse>(responseBody.Substring(1, responseBody.Length-2));
 
-                Console.OutputEncoding = UnicodeEncoding.UTF8;
-                Console.WriteLine(result.Translations[0].Text);
-                //for now just output the translated result. Do we want this to return a translationData object?
-                //TranslationData translationData = new TranslationData();
-                //translationData.SecondaryLanguage = LanguageLookup.FindLanguage(result.Translations[0].To);
-                //translationData.SecondaryText = result.Translations[0].Text;
-                //translationData.PrimaryLanguage = LanguageLookup.FindLanguage(result.DetectedLanguage.Language);
-                //translationData.PrimaryText = data;
-                //return translationData;
+                TranslationData translationData = new TranslationData();
+                translationData.SecondaryLanguage = LanguageLookup.FindLanguage(result.Translations[0].To);
+                translationData.SecondaryText = result.Translations[0].Text;
+                translationData.PrimaryLanguage = LanguageLookup.FindLanguage(result.DetectedLanguage.Language);
+                translationData.PrimaryText = data;
+                return translationData;
             }
         }
 

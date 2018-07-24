@@ -30,7 +30,7 @@ namespace LanguageLearningChatBotCore
             }
         }
 
-        public Language FindLanguage(string code)
+        public static Language FindLanguage(string code)
         {
             return (Language)Array.IndexOf(_languages, code);
         }
