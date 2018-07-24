@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LanguageLearningChatBotCore
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LanguageLearningChatBotConsoleClient", "LanguageLearningChatBotConsoleClient\LanguageLearningChatBotConsoleClient.csproj", "{CB0DC5AD-3D34-4187-A123-72FEE1A226FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LanguageLearningChatBotServer2", "LanguageLearningChatBotServer2\LanguageLearningChatBotServer2.csproj", "{E2D8E95D-2095-4787-9D62-ACDE2BC84AB0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LanguageLearningChatBotServer2", "LanguageLearningChatBotServer2\LanguageLearningChatBotServer2.csproj", "{E2D8E95D-2095-4787-9D62-ACDE2BC84AB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
