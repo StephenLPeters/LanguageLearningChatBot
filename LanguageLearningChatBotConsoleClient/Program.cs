@@ -20,8 +20,10 @@ namespace LanguageLearningChatBotConsoleClient
 
             static void Main(string[] args)
             {
+                Console.WriteLine("What language would you like to chat in? <fr, es, it, en>");
+                string lang = Console.ReadLine();
                 Console.WriteLine("Waiting for server...");
-                var getControllerIDTask = getControllerID(LanguageLearningChatBotCore.Language.English, LanguageLearningChatBotCore.Language.French);
+                var getControllerIDTask = getControllerID("en", lang);
                 getControllerIDTask.Wait();
                 controllerID = getControllerIDTask.Result;
 
@@ -32,27 +34,23 @@ namespace LanguageLearningChatBotConsoleClient
                     respondTask.Wait();
                     var serverResponse = respondTask.Result;
                     Console.WriteLine(serverResponse.Prompt.SecondaryText);
+                    Console.WriteLine(serverResponse.Response.SecondaryText);
 
                     userResponse = Console.ReadLine();
                 }
             }
 
-            private async static Task<int> getControllerID(LanguageLearningChatBotCore.Language primary, LanguageLearningChatBotCore.Language secondary)
+            private async static Task<int> getControllerID(string primary, string secondary)
             {
                 HttpClientHandler handler = new HttpClientHandler();
                 handler.ServerCertificateCustomValidationCallback = HttpClientHandler.DangerousAcceptAnyServerCertificateValidator;
 
                 using (var client = new HttpClient(handler))
                 {
-                    var values = new Dictionary<string, string>
-                    {
-                       { "PrimaryLanguage", primary.ToString() },
-                       { "SecondaryLanguage", secondary.ToString() }
-                    };
-                    var content = new FormUrlEncodedContent(values);
+                    var content = "?PrimaryLanguage=" + primary + "&SecondaryLanguage=" + secondary;
 
-                    //var response = await client.GetAsync("https://localhost:5001/api/LanguageLearningChatBotServer");
-                    var responseBody = await client.GetStringAsync("https://localhost:5001/api/LanguageLearningChatBotServer");
+                    string request = "https://localhost:5001/api/LanguageLearningChatBotServer" + content;
+                    var responseBody = await client.GetStringAsync(request);
 
                     int id = int.Parse(responseBody);
 
