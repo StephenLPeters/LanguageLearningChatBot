@@ -56,7 +56,7 @@ namespace LanguageLearningChatBotCore
 
         public async Task<List<Correction>> SpellCheck(string data, Language toLang)
         {
-            var spellCheckClient = new SpellCheckClient();
+            var spellCheckClient = new SpellCheckClient(toLang);
             SpellCheckResponse response = await spellCheckClient.SpellCheck(data);
             var corrections = new List<Correction>();
             foreach (FlaggedToken flaggedToken in response.FlaggedTokens)
@@ -82,7 +82,7 @@ namespace LanguageLearningChatBotCore
             var responseAnalysis = new ResponseAnalysis();
             responseAnalysis.Response = theirResponse;
             responseAnalysis.Prompt = myPrompt;
-            responseAnalysis.Corrections = new List<Correction>();
+            responseAnalysis.Corrections = SpellCheck(response, secondary).Result;
             return responseAnalysis;
         }
     }
