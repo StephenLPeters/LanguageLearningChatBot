@@ -71,11 +71,8 @@ namespace LanguageLearningChatBotCore
         {
             responseCount++;
 
-            var theirResponse = new TranslationData();
-            theirResponse.PrimaryLanguage = primary;
-            theirResponse.PrimaryText = response;
-            theirResponse.SecondaryLanguage = secondary;
-            theirResponse.PrimaryText = "Translated: " + response;
+            var theirResponse = Translate(response, secondary).Result;
+            //TODO: lookup an actual prompt for the user
             var myPrompt = new TranslationData();
             myPrompt.PrimaryLanguage = primary;
             myPrompt.PrimaryText = "Response to: " + response + " - Response #" + responseCount;
