@@ -2,7 +2,8 @@
   "profiles": {
     "LanguageLearningChatBotCore": {
       "commandName": "Project",
-      "commandLineArgs": "-db"
+      "commandLineArgs": "-dbp",
+      "workingDirectory": "C:\\Users\\steph\\OneDrive\\Documents\\GitHub\\LanguageLearningChatBot\\LanguageLearningChatBotCore"
     }
   }
 }

@@ -11,6 +11,7 @@ using Newtonsoft.Json.Linq;
 using LanguageLearningChatBotCore.DataModels;
 using LanguageLearningChatBotCore.Clients;
 using LanguageLearningChatBotCore.DataModels.BingSpellCheck;
+using Microsoft.EntityFrameworkCore;
 
 namespace LanguageLearningChatBotCore
 {
@@ -69,15 +70,24 @@ namespace LanguageLearningChatBotCore
 
         public ResponseAnalysis Respond(Language primary, Language secondary, string response)
         {
+
+            TranslationData myPrompt = null;
+            using (var db = new LanguageLearningChatBotCore.ScenarioContext())
+            {
+                var myPrompts = db.Prompts.Where(prompt => /*prompt.ScenarioID == myScenario.ScenarioID &&*/ prompt.ResponseNumber == responseCount).ToList();
+                if(myPrompts.Count > 0)
+                {
+                    myPrompt = Translate(myPrompts[0].PromptText, secondary).Result;
+                }
+                else
+                {
+                    myPrompt = Translate("Scenario Over", secondary).Result;
+                }
+            }
+
             responseCount++;
 
             var theirResponse = Translate(response, secondary).Result;
-            //TODO: lookup an actual prompt for the user
-            var myPrompt = new TranslationData();
-            myPrompt.PrimaryLanguage = primary;
-            myPrompt.PrimaryText = "Response to: " + response + " - Response #" + responseCount;
-            myPrompt.SecondaryLanguage = secondary;
-            myPrompt.SecondaryText = "Translated Response to: " + response + " - Response #" + responseCount;
 
             var responseAnalysis = new ResponseAnalysis();
             responseAnalysis.Response = theirResponse;
