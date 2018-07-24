@@ -47,9 +47,9 @@ namespace LanguageLearningChatBotCore
                 Console.WriteLine(result.Translations[0].Text);
                 //for now just output the translated result. Do we want this to return a translationData object?
                 //TranslationData translationData = new TranslationData();
-                //translationData.SecondaryLanguage = result.Translations[0].To;
+                //translationData.SecondaryLanguage = LanguageLookup.FindLanguage(result.Translations[0].To);
                 //translationData.SecondaryText = result.Translations[0].Text;
-                //translationData.PrimaryLanguage = result.DetectedLanguage.Language;
+                //translationData.PrimaryLanguage = LanguageLookup.FindLanguage(result.DetectedLanguage.Language);
                 //translationData.PrimaryText = data;
                 //return translationData;
             }
