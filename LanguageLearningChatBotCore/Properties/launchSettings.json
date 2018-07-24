@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "LanguageLearningChatBotCore": {
+      "commandName": "Project",
+      "commandLineArgs": "-db"
+    }
+  }
+}
