@@ -1,7 +1,7 @@
 using System;
-using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
+using System.Collections.Generic;
 // NOTE: Install the Newtonsoft.Json NuGet package.
 using Newtonsoft.Json;
 
@@ -9,20 +9,15 @@ namespace TranslatorTextQuickStart
 {
     class ConsoleView
     {
-        static string primLang = "en-us";
-        static string secondLang = "fr-fr";
-        static string scenario = "Restaurant";
-        static void Main(string[] args)
+        static void Main()
         {
-            instance(primLang, secondLang, scenario);
             LanguageLearningChatBotCore.ResponseAnalysis analysis = respond("");
             Console.WriteLine(analysis.Prompt.SecondaryText);
             string response = Console.ReadLine();
             Console.WriteLine(response);
-        }
-        static void instance(string primLang, string secondLang, string scenario){
 
         }
+
         static LanguageLearningChatBotCore.ResponseAnalysis respond(string userResponse){
 
             LanguageLearningChatBotCore.TranslationData prompt = new LanguageLearningChatBotCore.TranslationData();
@@ -49,5 +44,4 @@ namespace TranslatorTextQuickStart
             return responseAnalysis;
         }
     }
-
 }
