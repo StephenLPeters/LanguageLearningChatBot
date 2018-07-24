@@ -2,31 +2,16 @@ using System;
 using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
+using System.Threading.Tasks;
 using System.Collections;
 using System.Linq;
 // NOTE: Install the Newtonsoft.Json NuGet package.
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using LanguageLearningChatBotCore.DataModels;
 
 namespace LanguageLearningChatBotCore
 {
-    class Translation
-    {
-        public String Text { get; set; }
-        public String To { get; set; }
-    }
-
-    class DetectedLang
-    {
-        public String Language { get; set; }
-        public double Score { get; set; }
-    }
-
-    class TranslatorResponse
-    {
-        public DetectedLang DetectedLanguage { get; set; }
-        public IList<Translation> Translations { get; set; }
-    }
     public class ControllerAPIImpl
     {
         static string host = "https://api.cognitive.microsofttranslator.com";
@@ -39,7 +24,7 @@ namespace LanguageLearningChatBotCore
         // NOTE: Replace this example key with a valid subscription key.
         static string key = "fae421f860b548ecb7c5c5b04f12826a";
 
-        public async static /*TranslationData*/void Translate(string data)
+        public async static /*Task<TranslationData>*/void Translate(string data)
         {
             System.Object[] body = new System.Object[] { new { Text = data } };
             var requestBody = JsonConvert.SerializeObject(body);
@@ -60,7 +45,13 @@ namespace LanguageLearningChatBotCore
 
                 Console.OutputEncoding = UnicodeEncoding.UTF8;
                 Console.WriteLine(result.Translations[0].Text);
-                //return new TranslationData(data, );
+                //for now just output the translated result. Do we want this to return a translationData object?
+                //TranslationData translationData = new TranslationData();
+                //translationData.SecondaryLanguage = result.Translations[0].To;
+                //translationData.SecondaryText = result.Translations[0].Text;
+                //translationData.PrimaryLanguage = result.DetectedLanguage.Language;
+                //translationData.PrimaryText = data;
+                //return translationData;
             }
         }
 
