@@ -12,14 +12,17 @@ namespace LanguageLearningChatBotCore.Clients
     {
         static string host = "https://api.cognitive.microsoft.com";
         static string path = "/bing/v7.0/spellcheck?";
-        static string params_ = "mkt=en-US&mode=proof";
+        static string params_ = "mkt={0}&mode=proof";
         static string subscriptionKey = "4bc7dfb339264d5fa993e43cbad2d47c";
+        
 
         HttpClient client { get; set; }
+        string market { get; set; }
 
-        public SpellCheckClient()
+        public SpellCheckClient(Language toLang)
         {
             this.client = new HttpClient();
+            this.market = LanguageLookup.Languages[(int)toLang];
             client.DefaultRequestHeaders.Add("Ocp-Apim-Subscription-Key", subscriptionKey);
         }
 
@@ -29,6 +32,7 @@ namespace LanguageLearningChatBotCore.Clients
             values.Add(new KeyValuePair<string, string>("text", inputText));
 
             HttpResponseMessage response = new HttpResponseMessage();
+            string queryParams = string.Format(params_, this.market);
             string uri = $"{host}{path}{params_}";
 
             using (FormUrlEncodedContent content = new FormUrlEncodedContent(values))
