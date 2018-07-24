@@ -75,7 +75,10 @@ namespace TranslatorTextQuickStart
 
             List<LanguageLearningChatBotCore.Correction> corrections = new List<LanguageLearningChatBotCore.Correction>();
             corrections.Add(correction);
-            LanguageLearningChatBotCore.ResponseAnalysis responseAnalysis = new LanguageLearningChatBotCore.ResponseAnalysis(prompt, response, corrections);
+            LanguageLearningChatBotCore.ResponseAnalysis responseAnalysis = new LanguageLearningChatBotCore.ResponseAnalysis();
+            responseAnalysis.Prompt = prompt;
+            responseAnalysis.Response = response;
+            responseAnalysis.Corrections = corrections;
 
             return responseAnalysis;
         }

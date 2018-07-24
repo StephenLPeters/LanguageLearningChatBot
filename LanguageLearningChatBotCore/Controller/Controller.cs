@@ -6,27 +6,40 @@ namespace LanguageLearningChatBotCore
     public static class ControllerSingleton
     {
         private static int nextId = 0;
-        static List<Controller> controllers = new List<Controller>();
-        public static Controller GetInstance(Language primary, Language secondary)
+        static Dictionary<int, Controller> controllers = new Dictionary<int, Controller>();
+        public static int GetInstanceID(Language primary, Language secondary)
         {
-            Controller newController = new Controller(nextId, primary, secondary);
+            Controller newController = new Controller(primary, secondary);
+            int usedID = nextId;
             nextId++;
-            controllers.Add(newController);
-            return newController;
+            controllers.Add(usedID, newController);
+            return usedID;
+        }
+
+        public static ResponseAnalysis Respond(int controllerID, string data)
+        {
+            Controller controller = null;
+            controllers.TryGetValue(controllerID, out controller);
+            if (controller != null)
+            {
+                return controller.Respond(data);
+            }
+            else
+            {
+                throw new ArgumentOutOfRangeException();
+            }
         }
     }
 
-    public class Controller
+    internal class Controller
     {
-        private int m_id;
         private Language m_primary;
         private Language m_secondary;
 
         private ControllerAPIImpl m_controllerAPIImpl = new ControllerAPIImpl();
 
-        public Controller(int Id, Language primary, Language secondary)
+        public Controller(Language primary, Language secondary)
         {
-            m_id = Id; 
             m_primary = primary;
             m_secondary = secondary;
         }

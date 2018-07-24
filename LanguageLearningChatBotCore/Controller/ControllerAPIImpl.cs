@@ -21,6 +21,7 @@ namespace LanguageLearningChatBotCore
         // Text Translator API key
         static string key = "fae421f860b548ecb7c5c5b04f12826a";
 
+        private int responseCount = 0;
         public async static Task<TranslationData> Translate(string data, Language toLang)
         {
             System.Object[] body = new System.Object[] { new { Text = data } };
@@ -53,7 +54,24 @@ namespace LanguageLearningChatBotCore
 
         public ResponseAnalysis Respond(Language primary, Language secondary, string response)
         {
-            return new ResponseAnalysis(new TranslationData(), new TranslationData(), new List<Correction>());
+            responseCount++;
+
+            var theirResponse = new TranslationData();
+            theirResponse.PrimaryLanguage = primary;
+            theirResponse.PrimaryText = response;
+            theirResponse.SecondaryLanguage = secondary;
+            theirResponse.PrimaryText = "Translated: " + response;
+            var myPrompt = new TranslationData();
+            myPrompt.PrimaryLanguage = primary;
+            myPrompt.PrimaryText = "Response to: " + response + " - Response #" + responseCount;
+            myPrompt.SecondaryLanguage = secondary;
+            myPrompt.SecondaryText = "Translated Response to: " + response + " - Response #" + responseCount;
+
+            var responseAnalysis = new ResponseAnalysis();
+            responseAnalysis.Response = theirResponse;
+            responseAnalysis.Prompt = myPrompt;
+            responseAnalysis.Corrections = new List<Correction>();
+            return responseAnalysis;
         }
     }
 }
