@@ -9,6 +9,8 @@ using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using LanguageLearningChatBotCore.DataModels;
+using LanguageLearningChatBotCore.Clients;
+using LanguageLearningChatBotCore.DataModels.BingSpellCheck;
 
 namespace LanguageLearningChatBotCore
 {
@@ -50,6 +52,19 @@ namespace LanguageLearningChatBotCore
                 translationData.PrimaryText = data;
                 return translationData;
             }
+        }
+
+        public async Task<List<Correction>> SpellCheck(string data, Language toLang)
+        {
+            var spellCheckClient = new SpellCheckClient();
+            SpellCheckResponse response = await spellCheckClient.SpellCheck(data);
+            var corrections = new List<Correction>();
+            foreach (FlaggedToken flaggedToken in response.FlaggedTokens)
+            {
+                var correction = new Correction(flaggedToken);
+                corrections.Add(correction);
+            }
+            return corrections;
         }
 
         public ResponseAnalysis Respond(Language primary, Language secondary, string response)
