@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Web;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 
@@ -15,7 +17,9 @@ namespace LanguageLearningChatBotServer2.Controllers
         [HttpGet]
         public ActionResult<int> Get()
         {
-            return Program.GetNewControllerInstance(LanguageLearningChatBotCore.Language.English, LanguageLearningChatBotCore.Language.French);
+            string primaryLang = Request.Query["PrimaryLanguage"];
+            string secondaryLang = Request.Query["SecondaryLanguage"];
+            return Program.GetNewControllerInstance(LanguageLearningChatBotCore.LanguageLookup.FindLanguage(primaryLang), LanguageLearningChatBotCore.LanguageLookup.FindLanguage(secondaryLang));
         }
 
         // POST api/values
