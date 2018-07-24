@@ -16,18 +16,17 @@ namespace LanguageLearningChatBotCore
     {
         static string host = "https://api.cognitive.microsofttranslator.com";
         static string path = "/translate?api-version=3.0";
-        // MVP - Translate to French. This will have to change to use an enum for language lookup
-        static string params_ = "&to=fr";
+        static string params_ = "&to=";
 
-        static string uri = host + path + params_;
-
-        // NOTE: Replace this example key with a valid subscription key.
+        // Text Translator API key
         static string key = "fae421f860b548ecb7c5c5b04f12826a";
 
-        public async static /*Task<TranslationData>*/void Translate(string data)
+        public async static /*Task<TranslationData>*/void Translate(string data, Language toLang)
         {
             System.Object[] body = new System.Object[] { new { Text = data } };
             var requestBody = JsonConvert.SerializeObject(body);
+
+            string uri = host + path + params_ + LanguageLookup.Languages[(int)toLang];
 
             using (var client = new HttpClient())
             using (var request = new HttpRequestMessage())
