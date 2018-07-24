@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Net.Http;
 using System.Net.Http.Headers;
 using System.Threading.Tasks;
@@ -7,12 +8,12 @@ using Newtonsoft.Json;
 
 namespace LanguageLearningChatBotCore.Clients
 {
-    public class SpellCheckClient
+    public class SpellCheckClient : IDisposable
     {
         static string host = "https://api.cognitive.microsoft.com";
         static string path = "/bing/v7.0/spellcheck?";
         static string params_ = "mkt=en-US&mode=proof";
-        static  string subscriptionKey = "";
+        static string subscriptionKey = "4bc7dfb339264d5fa993e43cbad2d47c";
 
         HttpClient client { get; set; }
 
@@ -39,6 +40,11 @@ namespace LanguageLearningChatBotCore.Clients
             string contentString = await response.Content.ReadAsStringAsync();
             SpellCheckResponse spellCheckResponse = JsonConvert.DeserializeObject<SpellCheckResponse>(contentString);
             return spellCheckResponse;
+        }
+
+        public void Dispose()
+        {
+            this.client?.Dispose();
         }
     }
 }
