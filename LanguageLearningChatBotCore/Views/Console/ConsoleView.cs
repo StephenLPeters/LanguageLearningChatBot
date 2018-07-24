@@ -11,7 +11,7 @@ namespace TranslatorTextQuickStart
     {
         static void Main(string[] args)
         {
-            LanguageLearningChatBotCore.ResponseAnalysis analysis = respond("");
+            /*LanguageLearningChatBotCore.ResponseAnalysis analysis = respond("");
             Console.WriteLine(analysis.Prompt.SecondaryText);
 
             if (args.Length > 0)
@@ -23,9 +23,9 @@ namespace TranslatorTextQuickStart
             }
             string response = Console.ReadLine();
             Console.WriteLine(response);
-
+            */
         }
-
+        /*
         static void RunUnitTests()
         {
             RunTranslateUnitTests();
@@ -81,6 +81,6 @@ namespace TranslatorTextQuickStart
             responseAnalysis.Corrections = corrections;
 
             return responseAnalysis;
-        }
+        }*/
     }
 }
