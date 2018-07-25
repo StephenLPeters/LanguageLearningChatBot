@@ -6,6 +6,7 @@ using System.Net.Sockets;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace LanguageLearningChatBotConsoleClient
 {
@@ -15,7 +16,7 @@ namespace LanguageLearningChatBotConsoleClient
 
         class Program
         {
-            private static int controllerID = -1;
+            private static int controllerID =-1;
 
 
             static void Main(string[] args)
@@ -24,18 +25,24 @@ namespace LanguageLearningChatBotConsoleClient
                 string lang = Console.ReadLine();
                 Console.WriteLine("Waiting for server...");
 
-
-                var getControllerIDTask = getControllerID("en", lang);
-                getControllerIDTask.Wait();
-                controllerID = getControllerIDTask.Result;
-
+                try
+                {
+                    var getControllerIDTask = getControllerID("en", lang);
+                    getControllerIDTask.Wait();
+                    controllerID = getControllerIDTask.Result;
+                }
+                catch (Exception e)
+                {
+                    System.Diagnostics.Debug.WriteLine(e.InnerException);
+                    
+                }
 
                 string userResponse = "1";
                 var respondTask = Respond(userResponse);
                 respondTask.Wait();
                 var serverResponse = respondTask.Result;
                 Console.WriteLine(serverResponse.Prompt.SecondaryText);
-
+                
                 while (true)
                 {
                     userResponse = Console.ReadLine();
@@ -56,7 +63,7 @@ namespace LanguageLearningChatBotConsoleClient
             }
             private static void showTranslations (LanguageLearningChatBotCore.ResponseAnalysis analysis)
             {
-                Console.ForegroundColor = ConsoleColor.Blue;
+                Console.ForegroundColor = ConsoleColor.Cyan;
                 Console.WriteLine(analysis.Prompt.PrimaryText);
                 Console.ResetColor();
             }
@@ -64,10 +71,6 @@ namespace LanguageLearningChatBotConsoleClient
             {
                 int resIndex = 0;
 
-                foreach (LanguageLearningChatBotCore.Correction correction in analysis.Corrections)
-                {
-                    Console.WriteLine(correction.Corrected + " " + correction.Offset);
-                }
                 foreach (LanguageLearningChatBotCore.Correction correction in analysis.Corrections)
                 {
                     if (correction.Offset > 0)
